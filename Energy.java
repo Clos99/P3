@@ -1,35 +1,36 @@
-
+import java.awt.Point;
 public class Energy {
-	private double energy;
+	private int energy;
 	private int xPos, yPos;
+	private Point position;
 
 	public Energy() {
 		energy = 200;
 		xPos = yPos = 0;
+		position =  new Point();
 	}
 	
-	public int getxPos() {
-		return xPos;
+	public Energy(int x, int y) {
+		energy = 200;
+		
+		position = new Point(x,y);
 	}
-
-	public void setxPos(int xPos) {
-		this.xPos = xPos;
-	}
-
-	public int getyPos() {
-		return yPos;
-	}
-
-	public void setyPos(int yPos) {
-		this.yPos = yPos;
-	}
-
-	public void setEnergy(double e) {
+	
+	public void setEnergy(int e) {
 		energy = e;
 	}
 	
-	public double getEnergy() {
-		return this.energy;
+	public void setLocation(int x, int y) {//not sure if we need this
+		position.setLocation(x, y);
+	}
+	
+	public Point getLocation() {
+		return position;
+	}
+
+	public int getEnergy() {
+		
+		return energy;
 	}
 	
 }
