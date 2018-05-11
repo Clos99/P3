@@ -19,9 +19,10 @@ public class Energy {
 		found = false;
 	}
 	
-	public boolean isDepleted() {
-		return energy > 0;
+	public boolean isnotDepleted() {
+		return energy < 0;
 	}
+	
 	
 	public int getyPos() {
 		return yPos;

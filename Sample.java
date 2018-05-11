@@ -40,14 +40,14 @@
 				
 				this.standardDeviation = 0;
 				for (int i = 0; i < this.dataList.size(); i++) {
-					this.standardDeviation = Math.pow(this.dataList.get(i) - this.mean, 2) + this.standardDeviation;
+					this.standardDeviation = Math.pow(this.dataList.get(i) - this.mean, 2) /*+ this.standardDeviation*/;
 				}
-					this.standardDeviation = this.standardDeviation / (this.dataList.size() - 1);
-					this.standardDeviation = Math.sqrt(standardDeviation);
+					this.standardDeviation = this.standardDeviation / Math.sqrt((this.dataList.size() - 1));
+					//this.standardDeviation = Math.sqrt(standardDeviation);
 				}
 			public String toString() {
 				
-				return "size = " + this.dataList.size() + ", Max: " + String.format("%,.3f",this.max) + ", Min: " + String.format("%,.3f",this.min) + ", risk: " + String.format("%,.3f",this.standardDeviation) + ", Mean: " + String.format("%,.3f",this.mean);
+				return "size = " + this.dataList.size() + ", Max: " + String.format("%,.3f",this.max) + ", Min: " + String.format("%,.3f",this.min) + ", standardDeviation " + String.format("%,.3f",this.standardDeviation) + ", Mean: " + String.format("%,.3f",this.mean);
 			}
 			
 			
